@@ -11,13 +11,9 @@ class Posts extends Component {
 
     componentDidUpdate(prevPros, _){
         this.props.posts.push(this.props.newPost)
-        // if(!prevPros.newPost && this.props.newPost){
-        //     this.props.post.push(this.props.newPost)
-        // }
     }
 
     render() {
-
         const postItems = this.props.posts.map(post => (
             <div key={post.id}><h3>{post.title}</h3><p>{post.body}</p></div>
         ))
@@ -32,9 +28,9 @@ class Posts extends Component {
 
 Posts.propTypes = {
     fetchPosts: PropTypes.func.isRequired,
-    posts: PropTypes.array.isRequired
+    posts: PropTypes.array.isRequired,
+    newPost: PropTypes.object.isRequired
 }
-
 
 const mapStateToProps = state => ({
     posts: state.posts.items,

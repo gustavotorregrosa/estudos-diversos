@@ -9,7 +9,6 @@ export const fetchPosts = () => async dispatch => {
     })
 }
 
-
 export const createPost = postData => async dispatch => {
     const post = {
         title: postData.title,
